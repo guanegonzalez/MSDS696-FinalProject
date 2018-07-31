@@ -101,7 +101,7 @@ This project was completed utilizing:
 
 The full dataset was uploaded, summaries, data frames, tables, and plots created using the code in the files attached and Tableau.
 
-![image2](/Images/Bubble.png)
+![image2](/Images/Bubble.png =250x250 )
 ![image6](/Images/%EnrolleAdmittedStudents.png)
 ![image3](/Images/PieChart.png). 
 
