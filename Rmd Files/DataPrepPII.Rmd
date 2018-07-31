@@ -1,0 +1,159 @@
+---
+title: "Data Prep"
+output: html_notebook
+---
+
+##Open Libraries
+```{r}
+library("ggplot2", lib.loc="/Library/Frameworks/R.framework/Versions/3.4/Resources/library")
+library("graphics", lib.loc="/Library/Frameworks/R.framework/Versions/3.4/Resources/library")
+library("gplots", lib.loc="/Library/Frameworks/R.framework/Versions/3.4/Resources/library")
+library("dplyr")
+library("lattice", lib.loc="/Library/Frameworks/R.framework/Versions/3.4/Resources/library")
+library("data.table", lib.loc="/Library/Frameworks/R.framework/Versions/3.4/Resources/library")
+library("datasets")
+library("readxl")
+library("stats")
+library("caret")
+library("VIM")
+library("dummies")
+```
+
+
+Import file for analysis
+```{r}
+library(readxl)
+AdmitedStudentsData <- read_excel("~/Dropbox/Practicum II/RFiles/AdmitedStudentsData.xlsx")
+
+```
+Rename Data Set
+```{r}
+dataSet <- AdmitedStudentsData
+```
+Transform data set into data frame
+```{r}
+dfDataSet <- as.data.frame(dataSet)
+head(dfDataSet)
+```
+Remove ID
+```{r}
+dfDataSet <-dfDataSet[-(1)]
+```
+
+Summary
+```{r}
+summary(dfDataSet)
+```
+Structure of the data
+```{r}
+str(dfDataSet)
+```
+```{r}
+head(dfDataSet)
+```
+
+##Transform Variable's type to the appropriate data type
+```{r}
+dfDataSet[1:30] <- lapply(dfDataSet[1:30], as.factor)
+dfDataSet[35:44] <- lapply(dfDataSet[35:44], as.numeric)
+str(dfDataSet)
+```
+
+```{r}
+summary(dfDataSet)
+```
+Create a table from the dataframe.
+
+```{r}
+tbDataSet <- data.table(dfDataSet)
+tbDataSet
+```
+
+```{r}
+tb <- table(dfDataSet$Enrolling)
+tb
+```
+
+Create table with percentages of total
+```{r}
+tb.prop <- dfDataSet$Enrolling %>%
+   table() %>%
+   prop.table() %>% {. * 100} %>% 
+   round(2)
+
+tb.prop
+```
+
+##Create a Pie chart
+```{r}
+pie(tb, main = "Percentage of Enrolled Students from Accepted Students", col = c("Light Blue","Navy Blue"))
+```
+
+##Create a Bar chart
+```{r}
+barplot(tb, col = "navy blue", ylim =c(0,5000) , main = "Number of Enrolled Students from Accepted Students ")
+```
+Create a barchart for for students enrolled and gender of students.
+```{r}
+ggplot(dfDataSet) + 
+  geom_bar(aes(x = factor(Enrolling), fill = Sex), position = 'dodge') +
+  xlab('Enrolled Students') + ylab('Frequency')
+```
+
+## NA Imputation using kNN
+```{r}
+dfDataSetKNN <- kNN(dfDataSet)
+dfDataSetKNN <-subset(dfDataSetKNN, select = Enrolling:EventCount.Campus)
+summary(dfDataSetKNN)
+```
+```{r}
+str(dfDataSetKNN)
+
+```
+## Create Dummies
+
+
+```{r}
+dfwithDummies <- dummy.data.frame(dfDataSetKNN[2:30], sep = ".")
+names(dfwithDummies)
+```
+```{r}
+summary(dfwithDummies)
+```
+```{r}
+str(dfwithDummies)
+```
+```{r}
+dfJustNum <- dfDataSetKNN[31:48]
+str(dfJustNum)
+```
+
+```{r}
+dfNumAndDummies <- cbind(dfwithDummies, dfJustNum)
+str(dfNumAndDummies)
+```
+##Normalize Function
+```{r}
+normalize <- function(x) {
+    return ((x - min(x)) / (max(x) - min(x)))
+  }
+```
+
+```{r}
+dfNormData <- as.data.frame(lapply(dfNumAndDummies, normalize))
+str(dfNormData)
+```
+
+```{r}
+summary(dfNormData)
+```
+```{r}
+dfNormDatAndFactor <- cbind(dfDataSetKNN[1], dfNormData)
+str(dfNormDatAndFactor)
+```
+
+
+
+
+
+

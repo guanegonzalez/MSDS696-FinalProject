@@ -1,0 +1,107 @@
+---
+title: "SVM Model"
+output: html_notebook
+---
+##Open Libraries
+```{r}
+library(e1071)
+library(rpart)
+library("kernlab", lib.loc="~/Library/R/3.3/library")
+library("caret", lib.loc="~/Library/R/3.3/library")
+
+```
+```{r}
+NotNormData <- cbind(dfDataSetKNN[1],dfNumAndDummies)
+str(NotNormData)
+```
+##Parrtitions created with 75% of data for training and 25% of data for testing.
+```{r}
+set.seed(9850)
+inTrainingK <- createDataPartition(NotNormData$Enrolling, p = 0.75, list = FALSE)
+trainingK <- NotNormData[inTraining, ]
+testingK <- NotNormData[-inTraining, ]
+```
+
+```{r}
+trainingK
+```
+
+```{r}
+testingK
+```
+#SVM with out scaling before model
+
+```{r}
+model_ksvm <- ksvm(Enrolling ~., trainingK, kernel = "vanilladot")
+model_ksvm_classifier <- ksvm(Enrolling ~., data=trainingK, kernel = "vanilladot",scaled=FALSE)
+model_ksvm_predictor <- predict(model_ksvm_classifier,testingK)
+model_ksvm_classifier
+
+```
+
+```{r}
+table(model_ksvm_predictor, testingK$Enrolling) 
+agreement <- model_ksvm_predictor == testingK$Enrolling
+table(agreement)
+prop.table(table(agreement))
+
+```
+##SVM with Scaling before Model
+```{r}
+model_ksvm <- ksvm(Enrolling ~., training, kernel = "vanilladot")
+model_ksvm_classifier <- ksvm(Enrolling ~., data=training, kernel = "vanilladot", scale=TRUE)
+model_ksvm_predictor <- predict(model_ksvm_classifier,testing)
+model_ksvm_classifier
+
+```
+
+```{r}
+head(model_ksvm_predictor)
+```
+```{r}
+table(model_ksvm_predictor, testing$Enrolling) 
+agreement <- model_ksvm_predictor == testing$Enrolling
+table(agreement)
+prop.table(table(agreement))
+
+```
+## Confusion Matrix
+```{r}
+svm_table <- table(testing$Enrolling, model_ksvm_predictor)
+svm_table
+confusionMatrix(svm_table)
+```
+
+
+
+##SVM RBF or Bassian Kernel Model
+```{r}
+model_classifier_rbf <- ksvm(Enrolling ~., data=training, kernel = "rbfdot")
+model_predictions_rbf <- predict(model_classifier_rbf, testing)
+agreement_rbf <- model_predictions_rbf == testing$Enrolling
+table(agreement_rbf)
+prop.table(table(agreement_rbf))
+```
+
+## Confusion Matrix
+```{r}
+rbf_table <- table(testing$Enrolling, model_predictions_rbf)
+rbf_table
+confusionMatrix(rbf_table)
+```
+##SVM Polynomial Kernel Model
+```{r}
+model_classifier_poly=ksvm(Enrolling~.,data=training,kernel="polydot",gama=1,cost=1)
+model_predictions_poly <- predict(model_classifier_poly, testing)
+agreement_poly <- model_predictions_poly == testing$Enrolling
+table(agreement_poly)
+prop.table(table(agreement_poly))
+
+```
+## Confusion Matrix
+```{r}
+poly_table <- table(testing$Enrolling, model_predictions_poly)
+poly_table
+confusionMatrix(poly_table)
+```
+

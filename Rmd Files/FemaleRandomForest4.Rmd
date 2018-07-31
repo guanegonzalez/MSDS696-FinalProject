@@ -1,0 +1,150 @@
+---
+title: "Random Forest Female Students"
+output: html_notebook
+---
+##Random Forest Prediction Model
+
+Open libraries.
+
+```{r}
+library("mlbench")
+library("dplyr")
+library("caret")
+library("randomForest")
+library("lattice")
+library("ggplot2")
+library("rpart")
+library("e1071")
+library("caret", lib.loc="/Library/Frameworks/R.framework/Versions/3.4/Resources/library")
+library("stats")
+library(relaimpo)
+library(party)
+
+```
+##Create a subset of data consisting of students with a "Sex" of "F"
+```{r}
+FemaleData<-subset(dfNormDatAndFactor, Sex.F == '1')
+head(FemaleData)
+
+```
+
+Look at the data subset
+```{r}
+summary(FemaleData)
+```
+
+Get a list of Variable names.
+
+```{r}
+NamesF <- names(FemaleData)
+unlist(NamesF, recursive = TRUE, use.names = TRUE)
+```
+
+##Parrtitions created with 75% of data for training and 25% of data for testing.
+```{r}
+inTrainingF <- createDataPartition(FemaleData$Enrolling, p = 0.75, list = FALSE)
+trainingF <- FemaleData[inTrainingF, ]
+testingF <- FemaleData[-inTrainingF, ]
+```
+
+```{r}
+trainingF
+```
+
+```{r}
+testingF
+```
+##Run Random Forest Model with all variables.
+```{r}
+rfModelF <- randomForest(Enrolling ~ Sex.F + Sex.M +Expel.N + Expel.Y+ First.Gen.N+ First.Gen.Y+Challenge.Tag.N + Challenge.Tag.Y+ Boettcher.Semi.N+ Boettcher.Semi.Y+ Boettcher.Final.N+Boettcher.Final.Y + Daniels.Semi.N+Daniels.Semi.Y+ Daniels.Final.N+ Daniels.Final.Y+ Harvey.App.N+ Harvey.App.Y + Harvey.Final.N+ Harvey.Final.Y+ FC.App.N+ FC.App.Y+  Thorson.App.N+ Thorson.App.Y+ Thorson.Admit.N +Thorson.Admit.Y+Summet.Participant.N+ Summet.Participant.Y + Mines.Medal.N+ Mines.Medal.Y+ SPS.N+ SPS.Y+ Veteran.N+ Veteran.Y+ Legacy.N +  Legacy.Y+ Athlete.N +  Athlete.N + Athlete.Y + State.CO +  State.Other  +  Citizenship.Foreign.National.International +Citizenship.International +  Citizenship.Missing+ Citizenship.U.S..Citizen+ Citizenship.U.S..Permanent.Resident.Green.Card.Holder+ Citizenship.Undocumented.DACA+ Ethnicity.American.Indian.or.Alaska.Native+  Ethnicity.Asian+ Ethnicity.Black.or.African.American+ Ethnicity.Hispanic.or.Latino + Ethnicity.Missing + Ethnicity.Multiracial +Ethnicity.Native.Hawaiian.or.Other.Pacific.Islander + Ethnicity.NotDeclared + Ethnicity.Unknown +Ethnicity.White+ Major.App.Applied.Mathematics...Statistics...Computational...Applied.Mathematics+ Major.App.Applied.Mathematics...Statistics...Statistics+ Major.App.Chemical.Engineering+ Major.App.Chemical.Engineering...Biological.Engineering.Specialty+ Major.App.Chemistry+  Major.App.Chemistry...Biochemistry.Specialty + Major.App.Chemistry...Environmental.Chemistry.Specialty + Major.App.Civil.Engineering + Major.App.Computer.Science + Major.App.Economics+ Major.App.Electrical.Engineering+ Major.App.Engineering.Physics+  Major.App.Environmental.Engineering+ Major.App.Geological.Engineering +  Major.App.Geophysical.Engineering +Major.App.Mechanical.Engineering +  Major.App.Metallurgical...Materials.Engineering + Major.App.Mining.Engineering +  Major.App.Missing + Major.App.Petroleum.Engineering+   Major.App.Undecided+ First.Contact.ACT +  First.Contact.Application + First.Contact.Athlete.Form + First.Contact.Campus.Visit + First.Contact.College.Fair + First.Contact.FUF+First.Contact.Girls.Lead.the.Way+First.Contact.GPA.Form + First.Contact.Inquiry.Form+First.Contact.Mailing+ First.Contact.Materials +  First.Contact.MEP+ First.Contact.Phone+ First.Contact.Preview.Mines+ First.Contact.Royall.Search+First.Contact.TOEFL+ First.Contact.SAT+ First.Visit.Campus.Tour+ First.Visit.Campus.Visit+ First.Visit.Class.Shadow +  First.Visit.Discover.Mines+ First.Visit.Discovery.Mines.in.Your.City+ First.Visit.Girls.Lead.the.Way+  First.Visit.Launch + First.Visit.Making.The.Connection + First.Visit.Meet.Me.at.Mines+ First.Visit.None+  First.Visit.Preview.Mines + First.Visit.Preview.Mines.In.Your.City + Sport.Men.s.Varsity.Baseball+  Sport.Men.s.Varsity.Basketball+  Sport.Men.s.Varsity.Football + Sport.Men.s.Varsity.Golf +Sport.Men.s.Varsity.Soccer+  Sport.Men.s.Varsity.Wrestling+  Sport.None+  Sport.Varsity.Swimming.Diving+ Sport.Varsity.Track.Field+Sport.Varsity.XCountry+  Sport.Women.s.Varsity.Basketball +  Sport.Women.s.Varsity.Soccer+  Sport.Women.s.Varsity.Softball + Sport.Women.s.Varsity.Volleyball+ App.Created.Days +  Age  + HS.GPA+ SATR.Converted +Review.OutsideActivity +Review.Leadership+Review.WorkExp+ Review.WorkEthic +Review.ExpDiversity +Review.DesireAttend +Review.Affinity+ Review.InnovEntrep+Review.Teamwork +Review.OverallFit + Logins.60Days+EventCount.All+EventCount.Admitted+EventCount.Campus, data =  trainingF)
+rfModelF
+
+```
+```{r}
+rfModelF.prediction <- predict(rfModelF, testingF)
+table(rfModelF.prediction, testingF$Enrolling)
+```
+
+To determine variable importance.
+```{r}
+imprfModelF <-   importance(rfModelF)
+imprfModelF
+```
+```{r}
+#format((sort(imprfModel, decreasing=TRUE)), scientific=F)
+#sort(imprfModel, decreasing=TRUE)  # relative importance
+```
+```{r}
+dfimprfModelF <-as.data.frame(imprfModelF)
+dfimprfModelF
+```
+
+
+```{r}
+confusionMatrix(table(rfModelF.prediction, testingF$Enrolling))
+```
+
+Plot of importance of Variabels.
+```{r}
+varImpPlot(rfModelF,cex = .6, pt.cex = .7, color = "navy blue", gcolor = par("fg"), lcolor = "gray", main = "Variable Importance for Random Forest Model")
+```
+##Model with less variables
+```{r}
+rfModelLessF <- randomForest(Enrolling ~ FC.App.N + Athlete.N +  Athlete.Y + State.CO +  State.Other  +  First.Contact.FUF+ First.Visit.Campus.Tour+ First.Visit.Campus.Visit+ First.Visit.Launch + First.Visit.Making.The.Connection + First.Visit.None+  First.Visit.Preview.Mines.In.Your.City + Sport.None+  App.Created.Days +  Age  + HS.GPA+ SATR.Converted +Review.OutsideActivity +Review.Leadership+Review.WorkExp+ Review.WorkEthic +Review.ExpDiversity +Review.DesireAttend +Review.Affinity+ Review.InnovEntrep+Review.Teamwork +Review.OverallFit + EventCount.All+EventCount.Admitted+EventCount.Campus, data =  trainingF)
+rfModelLessF
+
+```
+
+```{r}
+rfModelLessF.prediction <- predict(rfModelLessF, testing)
+table(rfModelLessF.prediction, testing$Enrolling)
+```
+
+To determine variable imortance.
+```{r}
+imprfModelLessF <-   importance(rfModelLessF)
+#format(imprfModelLess, scientific=F)
+imprfModelLessF
+```
+```{r}
+varImpPlot(rfModelLessF,cex = .6, pt.cex = .7, color = "navy blue", gcolor = par("fg"), lcolor = "gray", main = "Variable Importance for Random Forest Model")
+```
+```{r}
+confusionMatrix(table(rfModelLessF.prediction, testing$Enrolling))
+```
+
+##Model with top 25 variables
+```{r}
+rfModelTop25F <- randomForest(Enrolling ~   State.CO +  State.Other  + First.Visit.Campus.Visit+ First.Visit.Launch + First.Visit.Making.The.Connection + First.Visit.None+  First.Visit.Preview.Mines.In.Your.City + Sport.None+  App.Created.Days +  Age  + HS.GPA+ SATR.Converted +Review.OutsideActivity +Review.Leadership+Review.WorkExp+ Review.WorkEthic +Review.ExpDiversity +Review.DesireAttend +Review.Affinity+ Review.InnovEntrep+Review.Teamwork +Review.OverallFit + EventCount.All+EventCount.Admitted+EventCount.Campus, data =  trainingF)
+rfModelTop25F
+
+```
+
+```{r}
+rfModelTop25F.prediction <- predict(rfModelTop25F, testing)
+table(rfModelTop25F.prediction, testing$Enrolling)
+```
+
+To determine variable imortance.
+```{r}
+imprfModelTop25 <-   importance(rfModelTop25)
+#format(imprfModelLess, scientific=F)
+imprfModelTop25
+```
+
+```{r}
+confusionMatrix(table(rfModelTop25.prediction, testing$Enrolling))
+```
+
+
+
+
+
+
+
+
+
+
+
+
+

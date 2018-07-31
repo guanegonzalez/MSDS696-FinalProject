@@ -1,0 +1,68 @@
+---
+title: "Data Prep Normalization and Dummies"
+output: html_notebook
+---
+
+##Open Libraries
+```{r}
+library("ggplot2", lib.loc="/Library/Frameworks/R.framework/Versions/3.4/Resources/library")
+library("graphics", lib.loc="/Library/Frameworks/R.framework/Versions/3.4/Resources/library")
+library("gplots", lib.loc="/Library/Frameworks/R.framework/Versions/3.4/Resources/library")
+library("dplyr")
+library("lattice", lib.loc="/Library/Frameworks/R.framework/Versions/3.4/Resources/library")
+library("data.table", lib.loc="/Library/Frameworks/R.framework/Versions/3.4/Resources/library")
+library("datasets")
+library("readxl")
+library("stats")
+library("caret")
+library("VIM")
+library("dummies")
+```
+
+
+##Create Dummies
+
+```{r}
+dfwithDummies <- dummy.data.frame(dfDataSetKNN[2:30], sep = ".")
+names(dfwithDummies)
+```
+```{r}
+summary(dfwithDummies)
+```
+```{r}
+str(dfwithDummies)
+```
+```{r}
+dfJustNum <- dfDataSetKNN[31:48]
+str(dfJustNum)
+```
+
+```{r}
+dfNumAndDummies <- cbind(dfwithDummies, dfJustNum)
+str(dfNumAndDummies)
+```
+##Normalize Function
+```{r}
+normalize <- function(x) {
+    return ((x - min(x)) / (max(x) - min(x)))
+  }
+```
+
+```{r}
+dfNormData <- as.data.frame(lapply(dfNumAndDummies, normalize))
+str(dfNormData)
+```
+
+```{r}
+summary(dfNormData)
+```
+```{r}
+dfNormDatAndFactor <- cbind(dfDataSetKNN[1], dfNormData)
+str(dfNormDatAndFactor)
+```
+
+
+
+
+
+

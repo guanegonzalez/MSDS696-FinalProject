@@ -1,0 +1,15 @@
+---
+title: "Enrolling Subset 2"
+output: html_notebook
+---
+
+
+Create a subset of data consisting of students with a "Enrolling" of "Y"
+```{r}
+EnrolledData<-subset(dfNormData, Enrolling.Y == '1')
+head(EnrolledData)
+```
+Look at the data subset
+```{r}
+summary(EnrolledData)
+```
