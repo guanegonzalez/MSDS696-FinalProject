@@ -99,24 +99,17 @@ This project was completed utilizing:
 
 # EDA (Exploratory Data Analysis)
 
-The full dataset was uploaded, summaries, data frames, tables, and plots created using the code in the files attached.
+The full dataset was uploaded, summaries, data frames, tables, and plots created using the code in the files attached and Tableau.
 
-![image2](/Images/AdmittedStudentsEthnicity.png)
-
+![image2](/Images/Bubble.png)
+![image6](/Images/%EnrolleAdmittedStudents.png)
 ![image3](/Images/PieChart.png). 
 
 Bar plots were created for "admitted enrolled" numbers and "admitted enrolled" students divided by gender.
 
 ![image4](/Images/BarChart.png)
 ![image5](/Images/BarchartWithGender.png)
-
-### Data Set 2
-Variable CS Grad:  
-* Yes - CS Students
-* OtherMajor - Left CS
-* NG - Not Graduated. 
-
-Data from 2008-2018 and excludes current students and students that graduated from CS.
+![image7](/Images/AdmittedByEthnicity.png)
 
 Summaries were created.  
 
