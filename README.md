@@ -101,9 +101,9 @@ This project was completed utilizing:
 
 The full dataset was uploaded, summaries, data frames, tables, and plots created using the code in the files attached and Tableau.
 
-![image2](/Images/Bubble.png)
-![image6](/Images/%EnrolleAdmittedStudents.png)
-![image3](/Images/PieChart.png). 
+![image2](/Images/Bubble.png)  
+![image6](/Images/%EnrolleAdmittedStudents.png)  
+![image3](/Images/PieChart.png)   
 
 Bar plots were created for "admitted enrolled" numbers and "admitted enrolled" students divided by gender.
 
@@ -113,11 +113,11 @@ Bar plots were created for "admitted enrolled" numbers and "admitted enrolled" s
 
 Summaries were created.  
 
-![image3](/images/SummaryLastClass.png)
+![image8](/Images/Summary.png)
 
 To start the analysis for four year graduation success the need of creating a subset of the data arised. It was necessary to look at just the students that had completed the CS program succesfully in four years. It was also helpful to find the correlation between the courses taken by the students. The code below was used to achieve this.
 
-![image4](/images/CorrelationPlot.png). 
+![image9](/images/Str.png). 
 
 # Analysis
 ## Building the Models in R
