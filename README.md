@@ -101,13 +101,14 @@ This project was completed utilizing:
 
 The full dataset was uploaded, summaries, data frames, tables, and plots created using the code in the files attached.
 
-![image1](/Images/SummarydfDataset.png)
+![image2](/Images/AdmittedStudentsEthnicity.png)
 
-![image](/images/CSStudentStatusPie.png). 
+![image3](/Images/PieChart.png). 
 
-A bar plot was created where the "graduated" students were divided into CS and Other Major students.
+Bar plots were created for "admitted enrolled" numbers and "admitted enrolled" students divided by gender.
 
-![image2](/images/BarChart.png)
+![image4](/Images/BarChart.png)
+![image5](/Images/BarchartWithGender.png)
 
 ### Data Set 2
 Variable CS Grad:  
