@@ -101,7 +101,7 @@ This project was completed utilizing:
 
 The full dataset was uploaded, summaries, data frames, tables, and plots created using the code in the files attached.
 
-![image1](/images/SummarydfDataset.png)
+![image1](/Images/SummarydfDataset.png)
 
 ![image](/images/CSStudentStatusPie.png). 
 
