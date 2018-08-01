@@ -137,7 +137,7 @@ Several Libraries were used to perform this task:
 * library(rpart). 
 * library("kernlab", lib.loc="~/Library/R/3.3/library"). 
 
-A Random Forest models was used to determine variable importance, to train, and test the model.A Support Vector Machine (SVM) model was used to compare the accuracy of the Random Forest Model. Four variations of the model were used.
+A Random Forest model was used to determine variable importance, to train, and test the model.A Support Vector Machine (SVM) model was used to compare the accuracy of the Random Forest Model. Four variations of the SVM Model were used:
 
 * SVM with out scaling before model.  
 * SVM with Scaling before Model. 
@@ -146,18 +146,17 @@ A Random Forest models was used to determine variable importance, to train, and 
 
 75% of the data was used as the training set and 25% of the data was used as the testing set.
 
-Models were created using all admission's variables and then subsequently variables with less importance were removed. New models were created for this new data set. Several methods were tried to increase accuracy. Size of training set was increased and different number of variables were removed. The ideal conditions for accuracy are the ones shown below.
+Models were created using all admission's variables and then subsequently variables with less importance were removed. New models were created for this new data set. Several methods were tried to increase accuracy. Size of training set was increased and different number of variables were removed (25 used in the final model). The ideal conditions for accuracy are the ones shown below.
 
-### Regression Classification Trees and Random Forest Using All Variables
-* Partitions Creation
-* Regression Partition with method "class".
+### Random Forest Using All Variables
+* Partitions Creation (75%/25%)
 * Random Forest Method
-* Logistic Regression Method for Variable Importance
+* Random Forest for Variable Importance
 
 ### Models using less variables
-* Regression Partition with method "class" for set with less variables
-* Random Forest model with less variables
-* Logistic Regression with less variables
+* Partitions Creation (75%/25%)
+* Random Forest Method with 25 variables
+* Random Forest for Variable Importance
 
 ### Prediction of Students at Risk on Fifth Semester
 
