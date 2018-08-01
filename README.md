@@ -8,7 +8,7 @@ by Vanessa Gonzalez, August 2018
 
 The term "Yield" in college admissions is the percent of students who choose to enroll in a particular college or university after having been offered admission.(1) Higher Education Institutions and Institutions with focus in STEM in particular need to have a better handle of the yield between admitted and enroll students. With the need of increasing female population and limited resources the admissions office needs to know what students have a better chance to enroll so they can invest these resources and attention with increased yield rates.
 
-In this case will utilize data from last year (complete cycle) and will be able to increase the data set to two years after Census of Fall 2018. This colorado university bought a new software called "Slate" two years ago that captures not just the typical variables (race, age, act scores, etc.) from their admissions process but also captures more information like number of contacts with admission's staff, visits to the institution, number of clicks of the website etc. 
+In this case will utilize data from last year (complete cycle) and will be able to increase the data set to two years after Census of Fall 2018. This Colorado university bought a new software called "Slate" two years ago that captures not just the typical variables (race, age, act scores, etc.) from their admissions process but also captures more information like number of contacts with admission's staff, visits to the institution, number of clicks of the website etc. 
 
 We will try to determine which are the variables or combination of variables with higher weight that determine importance by Gender. We will build a predictive model to help admissions utilize resources and attention of their staff more efficiently to increase yield. We will decide on the best model trying different algorithms. 
 
@@ -23,11 +23,11 @@ The data used was extracted from the Admission's Slate University Database using
 
 Changes and cleaning were necessary:
 * In some variables the NA values were substituted by "Missing" or "None" as appropriate.
-* Other NA values were supbstituted with KNN method.
-* In the "State" variable all other states were substituted by "Other" havin two outcomes; "CO" or "Other".
+* Other NA values were substituted with KNN method.
+* In the "State" variable all other states were substituted by "Other" having two outcomes; "CO" or "Other".
 * Data types were transformed to appropriate type.
 * Factor variables with more than 21 levels were omitted.
-* Dummie variables were created for factor varialbes.
+* Dummy variables were created for factor variabl es.
 * All variables but the "Enrolling" variable were transformed into number variables.
 * All numerical variables were normalized.
 
@@ -93,8 +93,8 @@ After modifications the finished data sets consisted of the fallowing variables:
 
 This project was completed utilizing:
 * Slate -  to query the University data base and produce a csv file to be used by Tableau and R-Studio.
-* Tableau – to clean, format, and combine csv files into two main files. Tableauwasalso used to create some visualization.
-* R – Used to modify, and analyze the two main data sets. R files are located at:
+* Tableau – to clean, format, and combine csv files into two main files. Tableau was also used to create visualizations.
+* R – Used to modify, and analyze the two main data sets. R files are located at the Rmd folders.
 * A youtube presentation is located at: 
 
 # EDA (Exploratory Data Analysis)
