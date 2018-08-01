@@ -6,7 +6,7 @@ by Vanessa Gonzalez, August 2018
 
 # Project Overview
 
-The term "Yield" in college admissions is the percent of students who choose to enroll in a particular college or university after having been offered admission.(1) Higher Education Institutions and Institutions with focus in STEM in particular need to have a better handle of the yield between admitted and enroll students. With the need of increasing female population and limited resources the admissions office needs to know what students have a better chance to enroll so they can invest these resources and attention with increased yield rates.
+The term "Yield" in college admissions is the percent of students who choose to enroll in a particular college or university after having been offered admission. Higher Education Institutions and Institutions with focus in STEM in particular need to have a better handle of the yield between admitted and enroll students. With the need of increasing female population and limited resources the admissions office needs to know what students have a better chance to enroll so they can invest these resources and attention with increased yield rates.
 
 In this case will utilize data from last year (complete cycle) and will be able to increase the data set to two years after Census of Fall 2018. This Colorado university bought a new software called "Slate" two years ago that captures not just the typical variables (race, age, act scores, etc.) from their admissions process but also captures more information like number of contacts with admission's staff, visits to the institution, number of clicks of the website etc. 
 
@@ -99,7 +99,7 @@ This project was completed utilizing:
 
 # EDA (Exploratory Data Analysis)
 
-The full dataset was uploaded, summaries, data frames, tables, and plots created using the code in the files attached and Tableau.
+The full dataset was uploaded, summaries, data frames, tables, and plots created using the code in the files attached and Tableau for exploratory analysis and visualization.
 
 ![image2](/Images/Bubble.png)
 ![image6](/Images/%EnrolleAdmittedStudents.png)
@@ -114,32 +114,39 @@ Bar plots were created for "admitted enrolled" numbers and "admitted enrolled" s
 Summaries were created.  
 
 ![image8](/Images/Summary.png)
-
-To start the analysis for four year graduation success the need of creating a subset of the data arised. It was necessary to look at just the students that had completed the CS program succesfully in four years. It was also helpful to find the correlation between the courses taken by the students. The code below was used to achieve this.
-
-![image9](/images/Str.png). 
+![image9](/images/Str.png)
 
 # Analysis
+To start the analysis and after the data was cleaned and normalized the variable "Enrolling" was used as the factor to build the predictive models. Of all the students accepted we built models to predict which students have a higher probability of enrolling to the University. After models were built for all students then the model was built just for female students.
+
 ## Building the Models in R
 Several Libraries were used to perform this task:
 * library("mlbench"). 
 * library("dplyr"). 
 * library("caret"). 
-* library("randomForest")  
+* library("randomForest"). 
 * library("lattice"). 
 * library("ggplot2"). 
 * library("rpart"). 
 * library("e1071"). 
-* library("caret"). 
+* library("caret", lib.loc="/Library/Frameworks/R.framework/Versions/3.4/Resources/library"). 
+* library("stats"). 
+* library(relaimpo). 
+* library(party). 
+* library(e1071). 
+* library(rpart). 
+* library("kernlab", lib.loc="~/Library/R/3.3/library"). 
 
-Three main models were used to determine variable importance, to train, and test the model.
+A Random Forest models was used to determine variable importance, to train, and test the model.A Support Vector Machine (SVM) model was used to compare the accuracy of the Random Forest Model. Four variations of the model were used.
 
-* Regression Partition with method "class". 
-* Random Forest model. 
-* Logistic Regresion.  
-80% of the data was used as the training set and 20% of the data was used as the testing set.
+* SVM with out scaling before model.  
+* SVM with Scaling before Model. 
+* SVM RBF or Bassian Kernel Model. 
+* SVM Polynomial Kernel Model.  
 
-Models were created using all courses variables and then subsequently variables with less importance were removed. New models were created for this new data set. Several methods were tried to increase accuracy. Trees were prunned, size of training set was increased and different number of variables were removed. The ideal conditions for accuracy are the ones shown below.
+75% of the data was used as the training set and 25% of the data was used as the testing set.
+
+Models were created using all admission's variables and then subsequently variables with less importance were removed. New models were created for this new data set. Several methods were tried to increase accuracy. Size of training set was increased and different number of variables were removed. The ideal conditions for accuracy are the ones shown below.
 
 ### Regression Classification Trees and Random Forest Using All Variables
 * Partitions Creation
