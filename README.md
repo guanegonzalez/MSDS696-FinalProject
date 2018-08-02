@@ -181,7 +181,7 @@ Results were produced for Random Forest, Random Forest with 25 variables, and SV
 <img src="/Images/SVMRBF.png" width="50%">
 
 #### SVM Polynomial Kernel Model. 
-<img src="/Images/SVMPol.png" width="50%">
+<img src="/Images/SVMPoly.png" width="50%">
 
 #### Random Forest just for Female Subgroup. 
 <img src="/Images/RpartLess.png" width="50%">
