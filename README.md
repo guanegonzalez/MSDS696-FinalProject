@@ -106,7 +106,7 @@ The full dataset was uploaded, summaries, data frames, tables, and plots created
 
 Bar plots were created for "admitted enrolled" numbers and "admitted enrolled" students divided by gender.
 <img src="/Images/BarChart.png" width="70%">. 
-<img src="/Images/BarchartWithGender.png">. 
+<img src="/Images/BarchartWithGender.png" width="70%">. 
 
 ![image7](/Images/AdmittedByEthnicity.png). 
 
@@ -172,7 +172,7 @@ Results were produced for Random Forest, Random Forest with 25 variables, and SV
 <img src="/Images/SVM.png" width="50%">
 
 #### SVM with out scaling before model. 
-<img src="/Images/SVMwoScaling.png" width="50%">
+<img src="/Images/SVMwoScaling.png" width="20%">
 
 #### SVM with Scaling before Model. 
 <img src="/Images/SVMScaling.png" width="50%">
