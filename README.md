@@ -159,19 +159,26 @@ Models were created using all admission's variables and then subsequently variab
 
 # Analysis Results
 Results were produced for Random Forest, Random Forest with 25 variables, and SVM Models:  
-## All variables
-#### Random Forest  
-![image5](/images/RegressionAllV.png)
-#### Pruned Tree
-![image6](/images/PruneAll.png)
-#### Random Forest
-![image7](/images/RFAll.png)
-![image8](/images/RFAllPlot.png)
-## Less Course Variables
-#### Regression Partition with method "class".
-![image9](/images/RpartLess.png)
-#### Pruned Tree
-![image10](/images/PruneLess.png)
+#### Random Forest All Variables.   
+![image10](/Images/RFAllVariables.png). 
+#### Random Forest Variable Importance. 
+![image11](/Images/VariableImpAll.png). 
+#### Random Forest with less Variables. 
+![image12](/Images/RFLessVariables.png). 
+#### Support Vector Machine (SVM). 
+![image13](/Images/SVM.png). 
+#### SVM with out scaling before model. 
+![image14](/Images/SVMwoScaling.png). 
+#### SVM with Scaling before Model. 
+![image15](/Images/SVMScaling.png). 
+#### SVM RBF or Bassian Kernel Model. 
+![image16](/Images/SVMRFB.png). 
+#### SVM Polynomial Kernel Model. 
+![image17](/Images/SVMPoly.png). 
+#### Random Forest just for Female Subgroup. 
+![image18](/Images/RpartLess.png). 
+#### Variable Importance for Female Subgroup. 
+![image19](/Images/PruneLess.png)
 Importance of varialbes.  
 ![image11](/images/ImpVarLess.png)
 Plot of importance of variables.  
