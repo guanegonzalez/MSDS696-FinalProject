@@ -17,7 +17,7 @@ We will try to determine which are the variables or combination of variables wit
 
 The data used was extracted from the Admission's Slate University Database using the Slate application to query the database. Data from Fall 16 to Summer 2017 was used. The full dataset consisted of 11,162 records (number of applications) and 48 variables. A subset was created of just admitted students (6,235 students). This subset of data was used to create predicted models. A second subset of data was created including just female addmited students (2,046). Predictive models were created for this subset as well.
 
-![image1](/Images/AdmittedStudentsGender.png)
+<img src="/Images/AdmittedStudentsGender.png" width="50%">
 
 ### Observations on the Quality and Cleaning of the Data
 
@@ -101,9 +101,10 @@ This project was completed utilizing:
 
 The full dataset was uploaded, summaries, data frames, tables, and plots created using the code in the files attached and Tableau for exploratory analysis and visualization.
 
-![image2](/Images/Bubble.png)
-![image6](/Images/%EnrolleAdmittedStudents.png)
-![image3](/Images/PieChart.png)
+<img src="/Images/Bubble.png" width="70%">
+<img src="/Images/%EnrolleAdmittedStudents.png" width="50%">
+<img src="/Images/PieChart.png" width="50%">
+
 
 Bar plots were created for "admitted enrolled" numbers and "admitted enrolled" students divided by gender.
 
