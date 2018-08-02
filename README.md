@@ -178,7 +178,7 @@ Results were produced for Random Forest, Random Forest with 25 variables, and SV
 <img src="/Images/SVMScaling.png" width="50%">
 
 #### SVM RBF or Bassian Kernel Model. 
-<img src="/Images/SVMRFB.png.png" width="50%">
+<img src="/Images/SVMRBF.png" width="50%">
 
 #### SVM Polynomial Kernel Model. 
 <img src="/Images/SVMPol.png" width="50%">
