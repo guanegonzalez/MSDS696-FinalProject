@@ -160,34 +160,34 @@ Models were created using all admission's variables and then subsequently variab
 # Analysis Results
 Results were produced for Random Forest, Random Forest with 25 variables, and SVM Models:  
 #### Random Forest All Variables. 
-<img src="/Images/RFAllVariables.png" width="60%">
+<img src="/Images/RFAllVariables.png" width="50%">
 
 #### Random Forest Variable Importance. 
-<img src="/Images/VariableImpAll.png" width="60%">
+<img src="/Images/VariableImpAll.png" width="100%">
 
 #### Random Forest with less Variables. 
-<img src="/Images/RFLessVariables.png" width="60%">
+<img src="/Images/RFLessVariables.png" width="50%">
  
 #### Support Vector Machine (SVM). 
-<img src="/Images/SVM.png" width="60%">
+<img src="/Images/SVM.png" width="50%">
 
 #### SVM with out scaling before model. 
-<img src="/Images/SVMwoScaling.png" width="60%">
+<img src="/Images/SVMwoScaling.png" width="50%">
 
 #### SVM with Scaling before Model. 
-<img src="/Images/SVMScaling.png" width="60%">
+<img src="/Images/SVMScaling.png" width="50%">
 
 #### SVM RBF or Bassian Kernel Model. 
-<img src="/Images/SVMRFB.png.png" width="60%">
+<img src="/Images/SVMRFB.png.png" width="50%">
 
 #### SVM Polynomial Kernel Model. 
-<img src="/Images/SVMPol.png" width="60%">
+<img src="/Images/SVMPol.png" width="50%">
 
 #### Random Forest just for Female Subgroup. 
-<img src="/Images/RpartLess.png" width="60%">
+<img src="/Images/RpartLess.png" width="50%">
 
 #### Variable Importance for Female Subgroup. 
-<img src="/Images/PruneLess.png" width="60%">
+<img src="/Images/PruneLess.png" width="100%">
 
 Importance of varialbes.  
 ![image11](/images/ImpVarLess.png)
