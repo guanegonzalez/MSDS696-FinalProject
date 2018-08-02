@@ -172,7 +172,7 @@ Results were produced for Random Forest, Random Forest with 25 variables, and SV
 <img src="/Images/SVM.png" width="50%">
 
 #### SVM with out scaling before model. 
-<img src="/Images/SVMwoScaling.png" width="20%">
+<img src="/Images/SVMwoScaling.png" width="30%">
 
 #### SVM with Scaling before Model. 
 <img src="/Images/SVMScaling.png" width="50%">
