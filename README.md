@@ -112,11 +112,10 @@ Bar plots were created for "admitted enrolled" numbers and "admitted enrolled" s
 
 Summaries were created.  
 
-![image8](/Images/Summary.png)
-![image9](/images/Str.png)
+![image8](/Images/Summary.png). 
 
 # Analysis
-To start the analysis and after the data was cleaned and normalized the variable "Enrolling" was used as the factor to build the predictive models. Of all the students accepted we built models to predict which students have a higher probability of enrolling to the University. After models were built for all students then the model was built just for female students.
+To start the analysis and after the data was cleaned and normalized the variable "Enrolling" was used as the factor to build the predictive models. Of all the students accepted we built models to predict which students have a higher probability of enrolling to the University. After models were built for all students then the model was built just for a subgroup of female students.
 
 ## Building the Models in R
 Several Libraries were used to perform this task:
@@ -157,17 +156,11 @@ Models were created using all admission's variables and then subsequently variab
 * Random Forest Method with 25 variables
 * Random Forest for Variable Importance
 
-### Prediction of Students at Risk on Fifth Semester
-
-* Random Forest model using less variables for semester 5
-* Regresion Partition with method "class" for less variables for 5th semester courses.
-* Random Forest method with less variables on 5th semester.
-* Logistic Regression method for variable importance
 
 # Analysis Results
-Results were produced for Regresion Partition with all variables, after pruning, and Random Forest for three data sets:  
-## All courses variables
-#### Regression Partition with method "class".
+Results were produced for Random Forest, Random Forest with 25 variables, and SVM Models:  
+## All variables
+#### Random Forest  
 ![image5](/images/RegressionAllV.png)
 #### Pruned Tree
 ![image6](/images/PruneAll.png)
