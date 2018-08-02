@@ -101,16 +101,14 @@ This project was completed utilizing:
 
 The full dataset was uploaded, summaries, data frames, tables, and plots created using the code in the files attached and Tableau for exploratory analysis and visualization.
 
-<img src="/Images/Bubble.png" width="80%"> 
-<img src="/Images/EnrolleAdmittedStudents.png" width="90%">  
+<img src="/Images/Bubble.png" width="80%">  
 <img src="/Images/PieChart.png" width="70%">  
 
-
 Bar plots were created for "admitted enrolled" numbers and "admitted enrolled" students divided by gender.
+<img src="/Images/BarChart.png" width="70%">. 
+<img src="/Images/BarchartWithGender.png">. 
 
-![image4](/Images/BarChart.png)
-![image5](/Images/BarchartWithGender.png)
-![image7](/Images/AdmittedByEthnicity.png)
+![image7](/Images/AdmittedByEthnicity.png). 
 
 Summaries were created.  
 
