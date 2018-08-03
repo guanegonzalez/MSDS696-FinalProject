@@ -127,13 +127,10 @@ Several Libraries were used to perform this task:
 * library("ggplot2"). 
 * library("rpart"). 
 * library("e1071"). 
-* library("caret", lib.loc="/Library/Frameworks/R.framework/Versions/3.4/Resources/library"). 
 * library("stats"). 
 * library(relaimpo). 
 * library(party). 
-* library(e1071). 
-* library(rpart). 
-* library("kernlab", lib.loc="~/Library/R/3.3/library"). 
+* library("kernlab"). 
 
 A Random Forest model was used to determine variable importance, to train, and test the model.A Support Vector Machine (SVM) model was used to compare the accuracy of the Random Forest Model. Four variations of the SVM Model were used:
 
@@ -148,17 +145,16 @@ Models were created using all admission's variables and then subsequently variab
 
 ### Random Forest Using All Variables
 * Partitions Creation (75%/25%)
-* Random Forest Method
 * Random Forest for Variable Importance
+* Random Forest Method
 
 ### Models using less variables
 * Partitions Creation (75%/25%)
-* Random Forest Method with 25 variables
 * Random Forest for Variable Importance
-
 
 # Analysis Results
 Results were produced for Random Forest, Random Forest with 25 variables, and SVM Models:  
+
 #### Random Forest All Variables. 
 <img src="/Images/RFAllVariables.png" width="50%">
 
@@ -200,14 +196,7 @@ Plot of importance of variables.
 ![image14](/images/FifthSemRF.png). 
 ![image18](/images/VarPlot.png). 
 
-## Last course taken by students that left the program
-The analysis for last CS highest course taken by students was done in three different data sets:
-#### All Students that left the CS program
-![image15](/images/AllStudentsLeft.png)
-#### Students that left the institution
-![image16](/images/LeftInst.png)
-#### Students that went to other majors in the same institution
-![image17](/images/OtherMajor.png)
+
 
 
 # Conclusions
