@@ -183,7 +183,7 @@ Results were produced for Random Forest, Random Forest with 25 variables, and SV
 <img src="/Images/WomenRF.png" width="50%">
 
 #### Variable Importance for Female Subgroup. 
-<img src="/Images/Female.png" width="100%">
+<img src="/Images/Female.png" width="75%">
 
 #### Summary of Results. 
 <img src="/Images/SummaryResults.png" width="100%">
