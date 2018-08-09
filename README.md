@@ -203,7 +203,7 @@ By using the Random Forest Algorithm with all the variables we were able to pred
 
 # Steps Forward
 
-There is a lot more to be done. More questions to to be answered and other angles to be explored. It would be interesting to experiment with the use of less variables or a combination of some of them to increase accuracy..
+There is a lot more to be done. More questions to to be answered and other angles to be explored. It would be interesting to experiment with the use of less variables or a combination of some of them to increase accuracy.
 There is more work to be done in the development of the report that queries the database to avoid some of the data clean-up. Adjustments will be made on this area.
 It will be interesting to direct resources to students with higher probability to enroll and measure results.
 
