@@ -190,7 +190,7 @@ Results were produced for Random Forest, Random Forest with 25 variables, and SV
 
 # Conclusions
 
-6,235 Students were admitted on the the 2016-2017 admissions cycle. 1,316 of this students enrolled for the 2017-2018 academic year.
+6,235 students were admitted on the the 2016-2017 admissions cycle. 1,316 of these students enrolled for the 2017-2018 academic year.
 By using the Random Forest Algorithm with all the variables we were able to predict with a 90.8% accuracy which of the accepted students had a higher probability of enrolling the fallowing year. 
 
 Additional resources may be directed to these students with a higher probability of enrollment increasing yield.
