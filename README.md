@@ -178,12 +178,15 @@ Results were produced for Random Forest, Random Forest with 25 variables, and SV
 
 #### SVM Polynomial Kernel Model. 
 <img src="/Images/SVMPoly.png" width="50%">
+
 #### Random Forest just for Female Subgroup. 
 <img src="/Images/WomenRF.png" width="50%">
+
 #### Variable Importance for Female Subgroup. 
 <img src="/Images/Female.png" width="100%">
+
 #### Summary of Results. 
-<img src="/Images/Summary.png" width="50%">
+<img src="/Images/SummaryResults.png" width="50%">
 
 # Conclusions
 
