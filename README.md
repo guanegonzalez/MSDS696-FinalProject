@@ -182,34 +182,34 @@ Results were produced for Random Forest, Random Forest with 25 variables, and SV
 <img src="/Images/WomenRF.png" width="50%">
 #### Variable Importance for Female Subgroup. 
 <img src="/Images/Female.png" width="100%">
+#### Summary of Results. 
+<img src="/Images/Summary.png" width="50%">
 
 # Conclusions
 
-536 Students were registered with a CS first major in the 2008-2014 time frame. By Spring 2018, 73.88% of those students graduated, 20.15% left the institution and 5.97% left the CS program and graduated from a different major.
+6,235 Students were admitted on the the 2016-2017 admissions cycle. 1,316 of this students enrolled for the 2017-2018 academic year.
+By using the Random Forest Algorithm with all the variables we were able to predict with a 90.8% accuracy which of the accepted students had a higher probability of enrolling the fallowing year. 
 
-It is important to predict which students are at risk of not graduating in 4 years, of leaving the program, or of leaving the institution and provide the additional support needed to increase the four-year graduation rate. The produced model can be applied when students are starting their 6th semester of the Computer Science program and predict if the student will graduate in four years or not graduate in four years with a 75.74% accuracy.
+Additional resources may be directed to these students with a higher probability of enrollment increasing yield.
+By using a smaller number of variables (25) the accuracy of the model did not decreased significantly (Accuracy of 90.7% and Kappa of 0.7038) suggesting the use of the Model with less variables in the future.
 
-Considering that the no information rate was 71.8% it is an acceptable result with a Kappa of 0.37. I would like to see a higher accuracy but even if just one extra student is detected, helped, and graduates on time it would be a success.
+kSVM Models were similar but not more accurate than the Random Forest model.
 
-There is a strong correlation between different CS courses in the sequence but was interesting to find a strong correlation of the MATH201 (Statistics Course) with so may of the CS courses.
+2,046 Female Students were admitted on the 2016-2017 admissions cycle. 412 of these students enrolled for the 2017-2018 academic year.
+By using the Random Forest Algorithm with all the variables we were able to predict with a 90.7% accuracy and a Kappa of 0.7030 which of the female accepted students had a higher probability of enrolling the fallowing year. 
 
-With the second data set it was found that most students that leave the program do so after taking the CSCI261 course fallowed by CSCI442, CSCI358, and CSCI262. This information provides insight to the Computer Science Department on doing additional research to figure out why this is. By modifying the class or provide students with additional help on this course student retention may increase.
+# Steps Forward
 
-It was interesting to find the main course variables that affect the 4-year graduation rate and how they correlate with each other. Some CECS courses were important as expected but the MATH201 statistics class was found to be important by every method and we really do not know why this is. Additional research should be done to figure out the reason.
-
-There is a lot more to be done. More questions to to be answered and other angles to be explored. It would be interesting to add more variables to our data set including gender, nationality, instate or out of state tuition, and race.
-It would also be interesting to apply the same model and process to other programs course sequences and reach out to students at risk to provide them with additional support.
-
-
-
-
+There is a lot more to be done. More questions to to be answered and other angles to be explored. It would be interesting to experiment with the use of less variables or a combination of some of them to increase accuracy..
+There is more work to be done in the development of the report that queries the database to avoid some of the data clean-up. Adjustments will be made on this area.
+It will be interesting to direct resources to students with higher probability to enroll and measure results.
 
 # References 
-Github: [1] (https://github.com/guanegonzalez/MSDS692-Final-Project).   
+Github: [1] (https://github.com/guanegonzalez/MSDS696-FinalProject).   
 
-Github R PDF Files: [2] (https://github.com/guanegonzalez/MSDS692-Final_Project-Vanessa_Gonzalez/tree/master/R_PDF_Files).   
+Github R HTML Files: [2] (https://github.com/guanegonzalez/MSDS696-FinalProject/tree/master/HTML%20Files).   
 
-Github R RMD Files: [3] (https://github.com/guanegonzalez/MSDS692-Final_Project-Vanessa_Gonzalez/tree/master/rmd_files).   
+Github R RMD Files: [3] (https://github.com/guanegonzalez/MSDS696-FinalProject/tree/master/Rmd%20Files).   
 
 Github Presentation in PDf: [4] (https://github.com/guanegonzalez/MSDS692-Final_Project-Vanessa_Gonzalez/tree/master/Presentations). 
 
