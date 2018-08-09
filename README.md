@@ -178,26 +178,10 @@ Results were produced for Random Forest, Random Forest with 25 variables, and SV
 
 #### SVM Polynomial Kernel Model. 
 <img src="/Images/SVMPoly.png" width="50%">
-
 #### Random Forest just for Female Subgroup. 
-<img src="/Images/RpartLess.png" width="50%">
-
+<img src="/Images/WomenRF.png" width="50%">
 #### Variable Importance for Female Subgroup. 
-<img src="/Images/PruneLess.png" width="100%">
-
-Importance of varialbes.  
-![image11](/images/ImpVarLess.png)
-Plot of importance of variables.  
-![image12](/images/ImpVarPlot.png)
-#### Random Forest
-![image13](/images/RFLess.png)
-## 5th Semester Variables
-#### Random Forest
-![image14](/images/FifthSemRF.png). 
-![image18](/images/VarPlot.png). 
-
-
-
+<img src="/Images/Female.png" width="100%">
 
 # Conclusions
 
