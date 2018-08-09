@@ -186,7 +186,7 @@ Results were produced for Random Forest, Random Forest with 25 variables, and SV
 <img src="/Images/Female.png" width="100%">
 
 #### Summary of Results. 
-<img src="/Images/SummaryResults.png" width="50%">
+<img src="/Images/SummaryResults.png" width="100%">
 
 # Conclusions
 
