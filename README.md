@@ -1,4 +1,4 @@
-# MSDS696-FinalProject
+# MSDS696-Final Project
 Data Science Practicum II Final Project
 by Vanessa Gonzalez, August 2018
 
