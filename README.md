@@ -2,7 +2,7 @@
 Data Science Practicum II Final Project
 by Vanessa Gonzalez, August 2018
 
-## Admissions' Yield Prediction by Gender in a Colorado Higher Education Institution.
+## Admissions' Yield Prediction by Gender in a Colorado Higher Education Institution
 
 # Project Overview
 
@@ -216,7 +216,7 @@ Github R RMD Files: [3] (https://github.com/guanegonzalez/MSDS696-FinalProject/t
 
 Github Presentation in PDf: [4] (https://github.com/guanegonzalez/MSDS692-Final_Project-Vanessa_Gonzalez/tree/master/Presentations). 
 
-Youtube Presentation: [5] (https://youtu.be/eOgN_IJm3YI)
+Youtube Presentation: [5] (https://youtu.be/fKe-7vCn1j8)
 
 
 
