@@ -210,7 +210,7 @@ It will be interesting to direct resources to students with higher probability t
 # References 
 Github: [1] (https://github.com/guanegonzalez/MSDS696-FinalProject).   
 
-Github R HTML Files: [2] (https://github.com/guanegonzalez/MSDS696-FinalProject/tree/master/HTML%20Files).   
+Github R PDFs Files: [2] (https://github.com/guanegonzalez/MSDS696-FinalProject/tree/master/PDFs).   
 
 Github R RMD Files: [3] (https://github.com/guanegonzalez/MSDS696-FinalProject/tree/master/Rmd%20Files).   
 
